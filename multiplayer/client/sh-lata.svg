@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 500" fill="none">
+  <!-- Can body -->
+  <rect x="30" y="20" width="140" height="460" rx="20" fill="#111" stroke="#d4a030" stroke-width="1.5"/>
+
+  <!-- Top rim -->
+  <ellipse cx="100" cy="25" rx="68" ry="8" fill="#222" stroke="#d4a030" stroke-width="1"/>
+
+  <!-- Bottom rim -->
+  <ellipse cx="100" cy="475" rx="68" ry="8" fill="#222" stroke="#d4a030" stroke-width="1"/>
+
+  <!-- "Shhhhhh!" text vertical -->
+  <text x="155" y="420" fill="#d4a030" font-family="Impact, Arial Black, sans-serif" font-size="52" font-weight="900" letter-spacing="-1" transform="rotate(-90, 155, 280)">Shhhhhh!</text>
+
+  <!-- "ENERGY DRINK" small text -->
+  <text x="68" y="440" fill="#d4a030" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="2" transform="rotate(-90, 68, 380)">ENERGY DRINK</text>
+
+  <!-- Finger "shh" gesture -->
+  <g transform="translate(55, 80) scale(0.85)" fill="#d4a030">
+    <!-- Palm/fist -->
+    <ellipse cx="45" cy="200" rx="32" ry="42"/>
+    <!-- Index finger pointing up -->
+    <rect x="33" y="50" width="24" height="130" rx="12"/>
+    <!-- Fingertip -->
+    <ellipse cx="45" cy="48" rx="12" ry="10"/>
+    <!-- Thumb crossing lips -->
+    <ellipse cx="22" cy="165" rx="14" ry="9" transform="rotate(-20, 22, 165)"/>
+    <!-- Knuckle lines -->
+    <line x1="28" y1="185" x2="62" y2="185" stroke="#111" stroke-width="1.5"/>
+    <line x1="28" y1="200" x2="62" y2="200" stroke="#111" stroke-width="1.5"/>
+    <line x1="28" y1="215" x2="62" y2="215" stroke="#111" stroke-width="1.5"/>
+  </g>
+
+  <!-- "Depende de vos" text -->
+  <text x="45" y="100" fill="#d4a030" font-family="Georgia, serif" font-size="12" font-style="italic" letter-spacing="0.5">Depende</text>
+  <text x="45" y="115" fill="#d4a030" font-family="Georgia, serif" font-size="12" font-style="italic" letter-spacing="0.5">de vos</text>
+
+  <!-- 04 circle badge -->
+  <circle cx="140" cy="85" r="20" fill="none" stroke="#d4a030" stroke-width="2"/>
+  <text x="140" y="92" fill="#d4a030" font-family="Arial Black, sans-serif" font-size="20" font-weight="900" text-anchor="middle">04</text>
+
+  <!-- 250ml -->
+  <text x="55" y="460" fill="#d4a030" font-family="Arial, sans-serif" font-size="12" letter-spacing="1">250 ml</text>
+
+  <!-- Signature scribble (De Paul) -->
+  <path d="M45,130 Q55,125 60,132 Q65,140 55,138 Q45,136 50,130" stroke="#d4a030" stroke-width="1.2" fill="none"/>
+</svg>

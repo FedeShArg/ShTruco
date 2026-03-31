@@ -81,6 +81,7 @@ The bot has a *loco* (crazy) personality — calls Truco with mediocre hands, bl
 | `truco-vanilla.jsx` | Earlier React version |
 | `GAME_PLAN.md` | Full design document including roadmap |
 | `QA_REPORT.md` | QA report with 16 bugs found and fixed |
+| `multiplayer/` | Online multiplayer server + client |
 | `CONVERSATION_LOG.md` | Full development log |
 
 ---
@@ -92,15 +93,58 @@ This is **Phase 1** of a larger vision inspired by Balatro:
 | Phase | Description | Status |
 |-------|-------------|--------|
 | 1 | Single-player vs bot, full Truco rules, casino UI | ✅ Done |
-| 2 | Multiplayer — Socket.io, rooms, lobby, 2v2 + señas | Planned |
+| 2 | Multiplayer — Socket.io, rooms, lobby, 2v2 + señas | ✅ Done |
 | 3 | Roguelike layer — run structure, relics, shop, boss fights | Planned |
 | 4 | SH! Extreme edition — branded theme, exclusive relics + modes | Planned |
 
 ---
 
+## Multiplayer Setup
+
+The `multiplayer/` folder contains the full online multiplayer system.
+
+### Quick Start
+
+```bash
+cd multiplayer/server
+npm install
+npm start
+```
+
+Then open `http://localhost:3000` in your browser. Create an account, make a room, and share the URL with a friend.
+
+### Architecture
+
+- **Server:** Node.js + Express + Socket.io + SQLite (sql.js)
+- **Auth:** Email/password signup, JWT tokens
+- **Game engine:** Server-authoritative — all game logic runs on the server
+- **Modes:** 1v1, 2v2 (with señas), Spectator mode
+- **Client:** Single HTML file with casino theme, served by the server
+
+### Project Structure
+
+```
+multiplayer/
+├── server/
+│   ├── index.js            # Express + Socket.io entry point
+│   ├── .env                # Config (PORT, JWT_SECRET, DB_PATH)
+│   ├── package.json
+│   ├── auth/auth.js        # Signup, login, JWT middleware
+│   ├── db/database.js      # SQLite via sql.js
+│   ├── game/truco-engine.js # Full Truco rules (ported from truco.html)
+│   ├── rooms/room-manager.js # Lobby, rooms, matchmaking
+│   └── socket/socket-handler.js # Real-time event handling
+└── client/
+    └── index.html          # Full multiplayer client (auth + lobby + game)
+```
+
+---
+
 ## Tech Stack
 
-Pure HTML + CSS + JavaScript. No frameworks, no libraries, no build tools.
+**Single-player:** Pure HTML + CSS + JavaScript. No frameworks, no libraries, no build tools.
+
+**Multiplayer:** Node.js, Express, Socket.io, sql.js (SQLite), bcryptjs, JWT.
 
 ---
 
